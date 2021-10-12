@@ -1,0 +1,26 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Diagrama de Contexto - Markab
+
+Person(cliente, "Pessoa", "Pessoa que usa a Aplicação Web")
+System_Ext(email_system,"Sistema de Email", "Servidor de E-mail")
+
+Enterprise_Boundary(markab, "Contexto de Automação") {
+    System(markabSystem, "Markab System", "Oferece uma interface para comunicação entre sistemas de automação.")
+    Person_Ext(admin_terceiro, "Admin Empresa Terceira", "Administrador do Sistema Terceiro Integrado")
+    System_Ext(thirdSystemSensores, "Sistema de Automação de Terceiro Sensores", "Consulta, edita e cria unidades, areas e componentes de um determinado cliente.")
+    System_Ext(thirdSystemCam, "Sistema de Automação de Terceiro Cameras", "Consulta, edita e cria unidades, areas e componentes de um determinado cliente.")
+}
+
+Rel(cliente, markabSystem, "Usa", "HTTPS, HTTP, JSON")
+Rel(admin_terceiro, markabSystem, "Usa", "HTTPS, JSON")
+Rel(thirdSystemSensores, markabSystem, "Usa", "HTTPS, JSON")
+Rel(thirdSystemCam, markabSystem, "Usa", "HTTPS, JSON")
+
+Rel(markabSystem, email_system, "Usa", "HTTPS, HTTP, JSON")
+
+Rel_Back(cliente, email_system, "Envia e-mail para")
+@enduml

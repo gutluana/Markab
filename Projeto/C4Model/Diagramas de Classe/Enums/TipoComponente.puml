@@ -1,0 +1,7 @@
+@startuml
+enum TipoComponente {
+  POTENCIOMETRO
+  ESTADO
+}
+
+@enduml

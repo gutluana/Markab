@@ -1,0 +1,27 @@
+@startuml
+class Unidade {
+    -[Int] id_unidade
+    -[String] nome
+    -[StatusPadrao] status
+    -[String] endereco
+    -[String] numero
+    -[String] cep
+    -[Date] data_ativacao
+    -[Date] data_finalizacao
+    -[Int] id_usuario
+    -[TipoUnidade] tipo_unidade
+    -[Int] id_usuario
+ 
+  .. Construtores ..
+    +Unidade()
+  .. Getters and Setters ..
+    +getNome()
+    +setNome()
+    +...
+  .. Métodos ..
+    +pegaNumeroAreas()
+    +pegaNumeroAreasAtivas()
+    +pegaNumeroComponentes()
+    +pegaNumeroComponentesAtivos()
+}
+@enduml

@@ -1,0 +1,72 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!include DEVICONS/java.puml
+!include DEVICONS/mysql.puml
+!include DEVICONS/react.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Diagrama de Componentes - API Gateway
+
+Container(webapp, "Web App", "ReactJs, Bootstrap, JavaScript", $descr="Portal de Acesso dos Clientes", $sprite="react")
+System_Ext(third_systems,"Sistemas Terceiros", "Outros sistemas que irão se integrar com Markab")
+
+ContainerDb(database, "Database", "MySQL", "Guarda as informações de clientes, usuarios, unidades, areas e componentes.", $sprite="mysql")
+System_Ext(log_system_ext, "Sistema de Log", "Java", "Gerenciador de Logs", $sprite="java")
+System_Ext(email_system,"Sistema de Email", "Servidor de E-mail")
+
+Container_Boundary(api, "API Application") {
+    Component(userController, "Usuário Controller", "Rest Controller", "Controla as entradas e saídas (Endpoints)")
+    Component(userService, "Usuário Service", "Serviço usuário", "Componente responsavel pelo dominio (regra de negócio).")
+    Component(userDao, "Usuário Dao", "User Dao", "Componente responsavel pelo acesso aos dados")
+    Component(userRepository, "Usuário Repository", "Usuário Repositorio", "Componente responsavel pelo acesso ao banco.")
+    
+    Rel(userController, userService, "Usa")
+    Rel(userService, userDao, "Usa")
+    Rel(userService, log_system_ext, "Grava")
+    Rel(userDao, userRepository, "Usa")
+    Rel(userRepository, database, "Usa", "SQL")
+
+    Component(unidadeController, "Unidade Controller", "Rest Controller", "Controla as entradas e saídas (Endpoints)")
+    Component(unidadeService, "Unidade Service", "Serviço Unidade", "Componente responsavel pelo dominio (regra de negócio).")
+    Component(unidadeDao, "Unidade Dao", "Unidade Dao", "Componente responsavel pelo acesso aos dados")
+    Component(unidadeRepository, "Unidade Repository", "Unidade Dao", "Componente responsavel pelo acesso ao banco.")
+    
+    Rel(unidadeController, unidadeService, "Usa")
+    Rel(unidadeService, unidadeDao, "Usa")
+    Rel(unidadeService, log_system_ext, "Grava")
+    Rel(unidadeDao, unidadeRepository, "Usa")
+    Rel(unidadeRepository, database, "Usa", "SQL")
+
+    Component(areaController, "Area Controller", "Rest Controller", "Controla as entradas e saídas (Endpoints)")
+    Component(areaService, "Area Service", "Serviço area", "Componente responsavel pelo dominio (regra de negócio).")
+    Component(areaDao, "Area Dao", "Area Dao", "Componente responsavel pelo acesso aos dados")
+    Component(areaRepository, "Area Repository", "Area Dao", "Componente responsavel pelo acesso ao banco.")
+    
+    Rel(areaController, areaService, "Usa")
+    Rel(areaService, areaDao, "Usa")
+    Rel(areaService, log_system_ext, "Grava")
+    Rel(areaDao, areaRepository, "Usa")
+    Rel(areaRepository, database, "Usa", "SQL")
+
+    Component(componenteController, "Componente Controller", "Rest Controller", "Controla as entradas e saídas (Endpoints)")
+    Component(componenteService, "Componente Service", "Serviço Componente", "Componente responsavel pelo dominio (regra de negócio).")
+    Component(componenteDao, "Componente Dao", "Componente Dao", "Componente responsavel pelo acesso aos dados")
+    Component(componenteRepository, "Componente Repository", "Componente Dao", "Componente responsavel pelo acesso ao banco.")
+    
+    Rel(componenteController, componenteService, "Usa")
+    Rel(componenteService, componenteDao, "Usa")
+    Rel(componenteService, log_system_ext, "Grava")
+    Rel(componenteDao, componenteRepository, "Usa")
+    Rel(componenteRepository, database, "Usa", "SQL")
+
+    Rel(userService, unidadeService, "Usa")
+    Rel(unidadeService, areaService, "Usa")
+    Rel(areaService, componenteService, "Usa")    
+}
+
+Rel(api, email_system, "Recebe", "JSON")
+Rel(webapp, api, "Usa", "JSON/HTTPS")
+Rel(third_systems, api, "Usa", "JSON/HTTPS")
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class AreaServico {
+  .. Construtores ..
+    +AreaServico()
+
+  .. Métodos ..
+    +getAllAreas()
+    +getArea(id)
+    +addArea(area)
+    +deleteArea(id)
+    +updatePartialArea(area)
+    +updateArea(area)
+    +pegaNumeroComponentes(area)
+    +pegaNumeroComponentesAtivos(area)
+
+}
+@enduml

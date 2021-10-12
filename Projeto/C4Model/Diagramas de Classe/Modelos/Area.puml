@@ -1,0 +1,20 @@
+@startuml
+class Area {
+    -[Int] id_area
+    -[String] nome
+    -[StatusPadrao] status
+    -[Int] id_unidade
+ 
+  .. Construtores ..
+    +Area()
+  .. Getters and Setters ..
+    +getNome()
+    +setNome()
+    +...
+  .. Métodos ..
+    +pegaNumeroComponentes()
+    +pegaNumeroComponentesAtivos()
+    +travaArea()
+    +destravaArea()
+}
+@enduml

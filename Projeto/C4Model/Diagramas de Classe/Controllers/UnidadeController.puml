@@ -1,0 +1,19 @@
+@startuml
+class UnidadeController {
+  .. Construtores ..
+    +UnidadeController()
+
+  .. Métodos ..
+    +getAllUnidade()
+    +getUnidade(id)
+    +addUnidade(unidade)
+    +deleteUnidade(id)
+    +updatePartialUnidade(unidade)
+    +updateUnidade(unidade)
+    +pegaNumeroAreas(unidade)
+    +pegaNumeroAreasAtivas(unidade)
+    +pegaNumeroComponentes(unidade)
+    +pegaNumeroComponentesAtivos(unidade)
+
+}
+@enduml

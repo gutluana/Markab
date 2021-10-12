@@ -1,0 +1,21 @@
+@startuml
+package modelos {
+    !include Modelos/Usuario.puml
+    !include Modelos/Unidade.puml
+    !include Modelos/Area.puml
+    !include Modelos/Componente.puml
+}
+
+package enums{
+    !include Enums/StatusUsuario.puml
+    !include Enums/TipoUsuario.puml    
+    !include Enums/TipoUnidade.puml
+    !include Enums/TipoComponente.puml    
+}
+
+Usuario - Unidade : possui >
+Unidade - Area : possui >
+Area - Componente : possui >
+
+AreaController - AreaServico : usa >
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class ComponenteServico {
+  .. Construtores ..
+    +ComponenteServico()
+
+  .. Métodos ..
+    +getAllComponentes()
+    +getComponente(id)
+    +addComponente(componente)
+    +deleteComponente(id)
+    +updatePartialComponente(componente)
+    +updateComponente(componente)
+
+}
+@enduml

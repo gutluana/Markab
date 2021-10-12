@@ -1,0 +1,19 @@
+@startuml
+!include ../Serviços/AreaServico.puml
+
+class AreaController {
+  .. Construtores ..
+    +AreaController()
+
+  .. Métodos ..
+    +getAllAreas()
+    +getArea(id)
+    +addArea(area)
+    +deleteArea(id)
+    +updatePartialArea(area)
+    +updateArea(area)
+    +pegaNumeroComponentes(area)
+    +pegaNumeroComponentesAtivos(area)
+
+}
+@enduml

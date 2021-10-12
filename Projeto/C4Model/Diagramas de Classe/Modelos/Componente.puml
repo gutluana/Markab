@@ -1,0 +1,20 @@
+@startuml
+class Componente {
+    -[Int] id_componente
+    -[String] nome
+    -[StatusPadrao] status
+    -[TipoComponente] tipo_componente
+    -[Int] id_area
+ 
+  .. Construtores ..
+    +Unidade()
+  .. Getters and Setters ..
+    +getNome()
+    +setNome()
+    +...
+  .. Métodos ..
+    +travaComponente()
+    +travaArea()
+}
+
+@enduml

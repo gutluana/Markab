@@ -1,0 +1,25 @@
+@startuml
+class Usuario {
+    -[Int] id_usuario
+    -[String] nome
+    -[StatusUsuario] status
+    -[String] endereco
+    -[String] numero
+    -[String] cep
+    -[String] email
+    -[String] telefone
+    -[String] celular
+    -[String] cpf
+    -[String] rg
+    -[String] cnpj
+    -[String] ie
+    -[Date] data_registro
+ 
+  .. Construtores ..
+    +Usuario()
+  .. Getters and Setters ..
+    +getIdUsuario()
+    +setIdUsuario()
+    +...
+}
+@enduml

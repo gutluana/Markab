@@ -1,0 +1,9 @@
+@startuml
+enum TipoUsuario {
+  USUARIO
+  ADM
+  GM
+  GOV
+}
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+class UsuarioServico {
+  .. Construtores ..
+    +UsuarioServico()
+
+  .. Métodos ..
+    +getAllUsuarios()
+    +getUsuario(id)
+    +addUsuario(usuario)
+    +deleteUsuario(id)
+    +updatePartialUsuario(usuario)
+    +updateUsuario(usuario)
+    +mandaSMS(usuario, msg)
+    +mandaEmail(usuario, HTML)
+    +ativaUsuario(usuario)
+    +inativaUsuario(usuario)
+}
+@enduml

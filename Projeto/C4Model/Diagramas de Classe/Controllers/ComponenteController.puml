@@ -1,0 +1,15 @@
+@startuml
+class ComponenteController {
+  .. Construtores ..
+    +ComponenteController()
+
+  .. Métodos ..
+    +getAllComponentes()
+    +getComponente(id)
+    +addComponente(componente)
+    +deleteComponente(id)
+    +updatePartialComponente(componente)
+    +updateComponente(componente)
+
+}
+@enduml

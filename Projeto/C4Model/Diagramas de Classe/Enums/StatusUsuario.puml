@@ -1,0 +1,10 @@
+@startuml
+
+!include StatusPadrao.puml
+
+enum StatusUsuario extends StatusPadrao{
+  CANCELADO
+  DEVEDOR
+}
+
+@enduml

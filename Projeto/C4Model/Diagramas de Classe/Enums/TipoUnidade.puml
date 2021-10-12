@@ -1,0 +1,9 @@
+@startuml
+enum TipoUnidade {
+  SALA
+  COMODO
+  GALPAO
+  GARAGEM
+}
+
+@enduml
