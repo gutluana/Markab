@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+
+package Markab {
+actor "Usuario Administrador" as a
+ 
+
+  usecase (Cadastrar Unidade) as UC1
+  usecase (Alterar Unidade) as UC2
+  usecase (Excluir unidade) as UC3
+  usecase (Relacionar Unidade) as UC4
+  usecase (Cadastrar Area) as UC5
+actor "Usuario Cliente" as c
+
+}
+
+a --> UC1
+a --> UC2
+a --> UC3
+a --> UC4 
+UC4 ---> UC5 #line.dashed : include
+ 
+c --> UC1
+c --> UC2
+c --> UC3
+c --> UC4 
+@enduml
