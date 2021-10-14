@@ -9,8 +9,10 @@
 - [Colaboradores](#-Colaboradores)
 - [Modelo C4](#-Modelo-C4)
 - [Diagrama de Contexo](#-Diagrama-de-Contexto)
-- [Diagrama de Componentes (LOG)](#-Diagrama-de-Componentes)
 - [Diagrama de Containers](#-Diagrama-de-Containers)
+- [Diagrama de Componentes (LOG)](#-Diagrama-de-Componentes)
+- [Diagrama de Componentes (API)](#-Diagrama-de-Componentes)
+- [Diagrama de Codigo](#-Diagrama-de-Codigo)
 
 
 ## Introdução
@@ -55,22 +57,30 @@
 ## Modelo C4 
 
 ### (Diagrama de Contexo)
+>Representa todo o sistema como um único processo os fluxos demonstram o comportamento do lado de fora de tracejado pessoas externas que utilizam o sistema Markab, no caso Pessoa e Admin de empresa terceira, a parte de dentro da linha tracejada apresenta o Markab em si, e a funcionalidade dele, um sistema que é uma interface para comunicação entre sistemas de automação
 
->Representa todo o sistema como um único processo é conhecido como diagrama de contexto, e é composto por fluxos de dados que mostram as interfaces entre o sistema e as entidades externas. O diagrama é uma forma de representar o objeto do estudo, o projeto, e sua relação ao ambiente.
+<img src="https://ik.imagekit.io/aa0efwxn6ck/contexto_X-BMUKpTFK.png?updatedAt=1634240153503">
 
-<img src="https://ik.imagekit.io/aa0efwxn6ck/jLFDJjj04BxxAQO-1Ia_bvvw8e1Lg814TIBKapMnXsJ5_hZxGq5LdwQ7FWWlrbclYQkeYb2bvX1xP_RxcS-xfywZzK79x9tGjGmDmSxxrdsOpIn-csw5tuLDS6HheprfFwsDchKITSHCd6-asCpEtq-MiRI-kPufT9uibwhpY7ZoqpQoPzVpBulrgh_hWU8zvEVc.png?updatedAt=1634062432236">
+### Diagrama de Containers 
+>um diagrama de container, esse diagrama expande para a parte do software e mostra aplicativos, armazenamento de dados, que compõe o Markab, no caso a pessoa acessa pela web com com a API é feita a manipulação dos dados, que é armazenado em um banco, ao mesmo tempo um sistema de log é gerado para gerenciar os logs do sistema, que é armazenado em um NoSQL Log Store.
+
+<img src="https://ik.imagekit.io/aa0efwxn6ck/hLJ1Rjj64BtpApP23p8WMOUcbm818ajgua2orL2kqHCn8iVq9kJkPcSfLoZwDJtq2_e5-R7EK1GhHcQGGtJHSkRjUszsPlSr1V2XAWirUvai2YpH18fUQ9CMLORgCGH7Fqyc7fukSnqUgsr5w5Dh0kCkKrjEN056zeyfP8NUJcOlnsi9tQsMa_RJMMtuos0.png?updatedAt=1634062432559">
+
+### Diagrama de Componentes (API)
+>Por trás da interface do Markab dentro da linha tracejada tempos os componentes que geram essa interface, também de sistemas terceiros pois esta incluso no sistema Markab, no caso Usuario sendo uma classe o controller é responsavel pelas entradas e saidas, o serviço usuario é responsavel pela regra de negocio, o usuario DAO faz o acesso aos dados, no caso o repositorio é a camada que faz acesso ao SQL. para os outros segue a mesma logica.
+
+<img src="https://ik.imagekit.io/aa0efwxn6ck/compapi_EnMycrdIAw.png?updatedAt=1634238250466">
 
 ### Diagrama de Componentes (LOG)
->O diagrama de componentes mostra o relacionamento entre diferentes componentes de um sistema. Para fins de UML 2.0, o termo "componente" refere-se a um módulo de classes que representa sistemas ou subsistemas independentes com capacidade de interagir com o restante do sistema.
+>O diagrama de componentes mostra o relacionamento entre diferentes componentes de um sistema. Apresenta o comportamento dos logs no sistema.
 
 <img src="https://ik.imagekit.io/aa0efwxn6ck/jPJDQXin4CVl-nJJfGSRulZGdWg5V3Wj1ITfOj9haAs98zZLB1fjIYXzdZn8NgnIl9xDVYpTGkg3qVxduoUD_kY8lNA-pBFadR6RhDG8zzuN_6a-T-hduTRu-t9TCheDMO_M7suednUPih5cnbvdPZq__JZx7gMRy-KyL-pH1UdsbFA2RAmf__9ETl9x0OYe.png?updatedAt=1634062432495">
 
-### Diagrama de Containers 
->um diagrama de container, amplia o sistema de software e mostra os containers (aplicativos, armazenamentos de dados, microservices, etc.) que compõem esse sistema de software. As decisões de tecnologia também são uma parte fundamental desse diagrama.
+### Diagrama de Codigo
 
-<img src="https://ik.imagekit.io/aa0efwxn6ck/jLFDJjj04BxxAQO-1Ia_bvvw8e1Lg814TIBKapMnXsJ5_hZxGq5LdwQ7FWWlrbclYQkeYb2bvX1xP_RxcS-xfywZzK79x9tGjGmDmSxxrdsOpIn-csw5tuLDS6HheprfFwsDchKITSHCd6-asCpEtq-MiRI-kPufT9uibwhpY7ZoqpQoPzVpBulrgh_hWU8zvEVc.png?updatedAt=1634062432236">
+<img src="https://ik.imagekit.io/aa0efwxn6ck/diagramageral_bPo8i2bLcN.png?updatedAt=1634238877941">
 
-[⬆ Voltar ao topo](#Markab)<br>
+[⬆ Voltar ao topo](#-Indice)
 
 
  
