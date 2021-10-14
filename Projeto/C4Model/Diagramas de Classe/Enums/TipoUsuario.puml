@@ -4,6 +4,7 @@ enum TipoUsuario {
   ADM
   GM
   GOV
+  ADMIN2
 }
 
 @enduml

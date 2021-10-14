@@ -1,0 +1,43 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+
+!include DEVICONS/mongodb.puml
+
+ContainerDb(mongodb, "NoSQL Log Store", "Mongo DB", "Guarda logs do sistema", $sprite="mongodb")
+
+Container_Boundary(log_system, "Sistema de logs de erros, acessos e mudanças"){
+    Component(errosController, "Erros Controlador", "RestFul", "Controla as entradas e saidas (endpoints)")
+    Component(errosServices, "Erros Service", "Erros Serviços", "Componente responsavel pelo dominio (regra de negocio)")
+    Component(errosDAO, "Erros DAO", "Erros DAO", "Componente responsavel pelo acesso aos dados")
+    Component(errosRepository, "Erros Repository", "Erros Repositorio", "Componente responsavel pelo acesso ao banco de dados")
+    
+    Rel(errosController,errosServices, "Usa")
+    Rel(errosServices,errosDAO, "Usa")
+    Rel(errosDAO,errosRepository, "Usa")
+    Rel(errosRepository,mongodb, "Usa", "SQL")
+    
+    Component(acessController, "Acess Controller ", "Acessos Controlador", "Controla acessos")
+    Component(acessServices, "Acess Seviços", "Acessos Serviços", "Componente responsavel pelos acessos aos serviços")
+    Component(acessDAO, "Acess DAO", "Acessos DAO", "Componente responsavel pelo acesso aos dados")
+    Component(acessRepository, "Acess Repository", "Acessos Repositorio", "Componente responsavel pelo acesso ao banco de dados")
+
+    Rel(acessController,acessServices, "Usa")
+    Rel(acessServices,acessDAO,"Usa")
+    Rel(acessDAO,acessRepository,"Usa")
+    Rel(acessRepository,mongodb, "Usa", "SQL")
+
+    Component(mudançaController, "Mudança Controlador", "RestFul", "Mudança entre as entradas e saidas")
+    Component(mudançaServices, "Mudança Service", "Mudança Serviços", "Componente responsavel pela mudança")
+    Component(mudançaDAO, "Mudança DAO", "Mudança DAO", "Componente responsavel pela mudança dos dados")
+    Component(mudançaRepository, "Mudança Repository", "Mudança Repositorio", "Componente responsavel pela mudança dos dados)")
+    
+    Rel(mudançaController,mudançaServices, "Usa")
+    Rel(mudançaServices,mudançaDAO,"Usa")
+    Rel(mudançaDAO,mudançaRepository,"Usa")
+    Rel(mudançaRepository,mongodb, "Usa", "SQL")
+   
+
+}
+@enduml

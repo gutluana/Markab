@@ -6,11 +6,11 @@ LAYOUT_WITH_LEGEND()
 title Diagrama de Contexto - Markab
 
 Person(cliente, "Pessoa", "Pessoa que usa a Aplicação Web")
+Person_Ext(admin_terceiro, "Admin Empresa Terceira", "Administrador do Sistema Terceiro Integrado")
 System_Ext(email_system,"Sistema de Email", "Servidor de E-mail")
 
 Enterprise_Boundary(markab, "Contexto de Automação") {
     System(markabSystem, "Markab System", "Oferece uma interface para comunicação entre sistemas de automação.")
-    Person_Ext(admin_terceiro, "Admin Empresa Terceira", "Administrador do Sistema Terceiro Integrado")
     System_Ext(thirdSystemSensores, "Sistema de Automação de Terceiro Sensores", "Consulta, edita e cria unidades, areas e componentes de um determinado cliente.")
     System_Ext(thirdSystemCam, "Sistema de Automação de Terceiro Cameras", "Consulta, edita e cria unidades, areas e componentes de um determinado cliente.")
 }
