@@ -1,0 +1,23 @@
+@startuml
+
+left to right direction
+
+package Markab {
+actor "usuariopadrao" as a
+ 
+
+  usecase (Cadastrar componente) as UC1
+  usecase (Alterar componente) as UC2
+  usecase (Excluir componente) as UC3
+  usecase (Relacionar componente -> Area) as UC4
+
+}
+
+a --> UC1
+a --> UC2
+a --> UC3
+a --> UC4 
+
+ 
+
+@enduml

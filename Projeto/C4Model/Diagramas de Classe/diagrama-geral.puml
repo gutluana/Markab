@@ -9,7 +9,7 @@ package modelos {
 package enums{
     !include Enums/StatusUsuario.puml
     !include Enums/TipoUsuario.puml    
-    !include Enums/TipoUnidade.puml
+    !include Enums/TipoArea.puml
     !include Enums/TipoComponente.puml    
 }
 
