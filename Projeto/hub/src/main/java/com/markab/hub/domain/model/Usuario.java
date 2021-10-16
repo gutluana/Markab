@@ -21,9 +21,20 @@ public class Usuario {
     private String ie;
     private Date data_registro;
 
+    //construtor
     public Usuario(){
 
     }
+
+  
+    
+    public void setData_registro(String string) {
+    }
+
+    /*
+        Estou usando lombok para gerar os encapsulamentos de campos 
+        criando os metodos  getters e setters em tempo de execução.
+    */
 
     
 }
