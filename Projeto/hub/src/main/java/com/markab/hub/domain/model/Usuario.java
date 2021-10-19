@@ -1,6 +1,5 @@
 package com.markab.hub.domain.model;
 
-import java.sql.Date;
 import lombok.Data;
 import com.markab.hub.domain.model.Enum.StatusUsuario;
 
@@ -19,7 +18,7 @@ public class Usuario {
     private String rg;
     private String cnpj;
     private String ie;
-    private Date data_registro;
+    private String data_registro;
 
     //construtor
     public Usuario(){
