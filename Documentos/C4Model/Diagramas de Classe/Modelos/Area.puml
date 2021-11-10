@@ -10,7 +10,7 @@ class Area {
   .. Getters and Setters ..
     +getNome()
     +setNome()
-    +...
+    
   .. Métodos ..
     +pegaNumeroComponentes()
     +pegaNumeroComponentesAtivos()

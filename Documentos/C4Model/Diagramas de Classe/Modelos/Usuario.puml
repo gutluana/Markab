@@ -5,13 +5,13 @@ class Usuario {
     -[StatusUsuario] status
     -[String] endereco
     -[String] numero
-    -[String] cep
+    -[Int] cep
     -[String] email
-    -[String] telefone
-    -[String] celular
-    -[String] cpf
-    -[String] rg
-    -[String] cnpj
+    -[Int] telefone
+    -[Int] celular
+    -[Int] cpf
+    -[Int] rg
+    -[Int] cnpj
     -[String] ie
     -[Date] data_registro
  

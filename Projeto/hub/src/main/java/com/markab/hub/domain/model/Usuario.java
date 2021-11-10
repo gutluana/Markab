@@ -1,24 +1,35 @@
 package com.markab.hub.domain.model;
 
 import lombok.Data;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import com.markab.hub.domain.model.Enum.StatusUsuario;
 
-@Data 
+@Data
+@Entity 
 public class Usuario {
-    private int id_usuario;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_usuario;
     private String nome;
     private StatusUsuario status;
     private String endereco;
     private String numero;
-    private String cep;
+    private int cep;
     private String email;
-    private String telefone;
-    private String celular;
-    private String cpf;
-    private String rg;
-    private String cnpj;
-    private String ie;
-    private String data_registro;
+    private Long telefone;
+    private Long celular;
+    private Long cpf;
+    private Long rg;
+    private Long cnpj;
+    private int ie;
+    private Date data_registro;
 
     //construtor
     public Usuario(){

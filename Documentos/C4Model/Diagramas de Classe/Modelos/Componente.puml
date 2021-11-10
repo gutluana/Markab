@@ -11,7 +11,7 @@ class Componente {
   .. Getters and Setters ..
     +getNome()
     +setNome()
-    +...
+  
   .. Métodos ..
     +travaComponente()
     +travaArea()

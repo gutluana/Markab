@@ -4,20 +4,20 @@ class Unidade {
     -[String] nome
     -[StatusPadrao] status
     -[String] endereco
-    -[String] numero
-    -[String] cep
+    -[Int] numero
+    -[Int] cep
     -[Date] data_ativacao
     -[Date] data_finalizacao
     -[Int] id_usuario
     -[TipoUnidade] tipo_unidade
-    -[Int] id_usuario
+  
  
   .. Construtores ..
     +Unidade()
   .. Getters and Setters ..
     +getNome()
     +setNome()
-    +...
+4
   .. Métodos ..
     +pegaNumeroAreas()
     +pegaNumeroAreasAtivas()
