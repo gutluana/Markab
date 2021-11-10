@@ -33,25 +33,25 @@ public class ComponenteController {
         if(isCarregado == false){
             
             Componente ventilador = new Componente();
-            ventilador.setId_componente(1);
+            ventilador.setId_componente(1L);
             ventilador.setNome("Ventilador");
             ventilador.setStatus(StatusPadrao.ATIVO);
             ventilador.setTipo_componente(TipoComponente.VENTILADOR);
-            ventilador.setId_area(1);
+            ventilador.setId_area(1L);
 
             Componente fogao = new Componente();
-            fogao.setId_componente(2);
+            fogao.setId_componente(2L);
             fogao.setNome("Fogão");
             fogao.setStatus(StatusPadrao.ATIVO);
             fogao.setTipo_componente(TipoComponente.FOGAO);
-            fogao.setId_area(1);
+            fogao.setId_area(1L);
 
             Componente tv = new Componente();
-            tv.setId_componente(3);
+            tv.setId_componente(3L);
             tv.setNome("TV");
             tv.setStatus(StatusPadrao.ATIVO);
             tv.setTipo_componente(TipoComponente.TV);
-            tv.setId_area(1);
+            tv.setId_area(1L);
 
             listaComponentes.add(ventilador);
             listaComponentes.add(fogao);
@@ -72,7 +72,7 @@ public class ComponenteController {
         carregaLista();
 
         for(int i = 0; i<listaComponentes.size(); i++){
-            int id_componente = listaComponentes.get(i).getId_componente();
+            Long id_componente = listaComponentes.get(i).getId_componente();
             if(id_componente == id){
                 return listaComponentes.get(i);
             }
@@ -92,7 +92,7 @@ public class ComponenteController {
         carregaLista();
 
         for(int i = 0; i<listaComponentes.size(); i++){
-            int id_componente = listaComponentes.get(i).getId_componente();
+            Long id_componente = listaComponentes.get(i).getId_componente();
             if(id_componente == id){
                 listaComponentes.remove(i);
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Componente " + listaComponentes.get(i).getNome() + " deletado com sucesso!");

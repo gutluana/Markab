@@ -33,34 +33,34 @@ public class AreaController {
         if(isCarregado == false ){
 
             Area quarto = new Area();
-            quarto.setId_area(1);
+            quarto.setId_area(1L);
             quarto.setNome("Quarto");
             quarto.setTipo(TipoArea.QUARTO);
-            quarto.setId_unidade(1);
+            quarto.setId_unidade(1L);
            
             Area banheiro = new Area();
-            banheiro.setId_area(2);
+            banheiro.setId_area(2L);
             banheiro.setNome("Banheiro");
             banheiro.setTipo(TipoArea.BANHEIRO);
-            banheiro.setId_unidade(1);
+            banheiro.setId_unidade(1L);
 
             Area sala = new Area();
-            sala.setId_area(3);
+            sala.setId_area(3L);
             sala.setNome("Sala");
             sala.setTipo(TipoArea.SALA);
-            sala.setId_unidade(1);
+            sala.setId_unidade(1L);
 
             Area cozinha = new Area();
-            cozinha.setId_area(4);
+            cozinha.setId_area(4L);
             cozinha.setNome("Cozinha");
             cozinha.setTipo(TipoArea.COZINHA);
-            cozinha.setId_unidade(1);
+            cozinha.setId_unidade(1L);
 
             Area quarto1 = new Area();
-            quarto1.setId_area(5);
+            quarto1.setId_area(5L);
             quarto1.setNome("Quarto 2");
             quarto1.setTipo(TipoArea.QUARTO);
-            quarto1.setId_unidade(1);
+            quarto1.setId_unidade(1L);
            
             
 
@@ -84,7 +84,7 @@ public class AreaController {
         carregaLista();
 
         for(int i = 0; i<listaAreas.size(); i++){
-            int idArea = listaAreas.get(i).getId_area();
+            Long idArea = listaAreas.get(i).getId_area();
             if(idArea == id){
                 return listaAreas.get(i);
             }
@@ -103,7 +103,7 @@ public class AreaController {
         carregaLista();
 
         for(int i = 0; i<listaAreas.size(); i++){
-            int idArea = listaAreas.get(i).getId_area();
+            Long idArea = listaAreas.get(i).getId_area();
             if(idArea == id){
                 listaAreas.remove(i);
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Area " + listaAreas.get(i).getNome() + " deletada com sucesso!");

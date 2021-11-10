@@ -1,16 +1,24 @@
 package com.markab.hub.domain.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import com.markab.hub.domain.model.Enum.TipoArea;
 
 import lombok.Data;
 
 
 @Data
+@Entity
 public class Area {
-    private int id_area;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_area;
     private String nome;
     private TipoArea tipo;
-    private int id_unidade;
+    private Long id_unidade;
 
 
     //construtor

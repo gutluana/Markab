@@ -1,13 +1,21 @@
 package com.markab.hub.domain.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import com.markab.hub.domain.model.Enum.StatusPadrao;
 import com.markab.hub.domain.model.Enum.TipoUnidade;
 
 import lombok.Data;
 
 @Data
+@Entity
 public class Unidade {
-    private int id_unidade;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_unidade;
     private String nome;
     private StatusPadrao status;
     private String endereco;
@@ -15,7 +23,7 @@ public class Unidade {
     private String cep;
     private String data_ativacao;
     private String data_finalizacao;
-    private int id_usuario;
+    private Long id_usuario;
     private TipoUnidade tipo_unidade;
 
     //construtor

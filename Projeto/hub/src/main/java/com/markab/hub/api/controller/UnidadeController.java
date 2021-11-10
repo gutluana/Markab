@@ -32,7 +32,7 @@ public class UnidadeController {
         if(isCarregado == false ){
 
             Unidade casa = new Unidade();
-            casa.setId_unidade(1);
+            casa.setId_unidade(1L);
             casa.setNome("Casa do Cesar");
             casa.setStatus(StatusPadrao.ATIVO);
             casa.setEndereco("Rua: bla bla, n 20");
@@ -40,11 +40,11 @@ public class UnidadeController {
             casa.setCep("13198930");
             casa.setData_ativacao("20-02-2020");
             casa.setData_finalizacao("-");
-            casa.setId_usuario(1);
+            casa.setId_usuario(1L);
             casa.setTipo_unidade(TipoUnidade.CASA);
             
             Unidade empresa = new Unidade();
-            empresa.setId_unidade(1);
+            empresa.setId_unidade(1L);
             empresa.setNome("Empresa do Cesar");
             empresa.setStatus(StatusPadrao.ATIVO);
             empresa.setEndereco("Rua: bla bla, n 20");
@@ -52,7 +52,7 @@ public class UnidadeController {
             empresa.setCep("13198930");
             empresa.setData_ativacao("20-02-2020");
             empresa.setData_finalizacao("-");
-            empresa.setId_usuario(1);
+            empresa.setId_usuario(1L);
             empresa.setTipo_unidade(TipoUnidade.EMPRESA);
 
             listaUnidades.add(casa);
@@ -73,7 +73,7 @@ public class UnidadeController {
         carregaLista();
 
         for(int i = 0; i<listaUnidades.size(); i++){
-            int id_unidade = listaUnidades.get(i).getId_unidade();
+            Long id_unidade = listaUnidades.get(i).getId_unidade();
             if(id_unidade == id){
                 return listaUnidades.get(i);
             }
@@ -92,7 +92,7 @@ public class UnidadeController {
         carregaLista();
 
         for(int i = 0; i<listaUnidades.size(); i++){
-            int idUnidade = listaUnidades.get(i).getId_unidade();
+            Long idUnidade = listaUnidades.get(i).getId_unidade();
             if(idUnidade == id){
                 listaUnidades.remove(i);
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Unidade " + listaUnidades.get(i).getNome() + " deletada com sucesso!");
